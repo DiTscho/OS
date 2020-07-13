@@ -1,0 +1,208 @@
+%% Author of this legend: Erik Morawetz
+%% 1-14: measurement information
+% these parameters are not to be included in the evaluation, and serve
+% the purpose of identifying subgroups and experiments within the feature matrix
+% as well as checking experimental conditions (temperature should be
+% relatively constant, wallcrash should be zero)
+
+
+
+
+1 - date - date in numeric form as identyer of experiment, format: yymmdd
+2 - time - time in numeric form as identyer of experiment, format: hhmmss, if only 5 digits: hmmss
+3 - label1 - Overarching label to identifiy types of experiment/ cell
+4 - label2 - Specific label to number individual experiment
+5 - label3 - Additional label for arbitrary purposes
+6 - ind    - Running index within experiment respective to label2
+
+7 - wallcrash  - Wallcrash value - if this >0 the cell can be disregarded
+8 - temp       - current stage temperature
+9 - LP         - Laser Power Stretch
+10 - HL         - Heatlaser involvement (0 - no heatlasers, 1 - heatlasers)
+11 - t_stretch  - time of the stretching phase in s
+12 - t_relax   - time of the relaxation phase in s
+
+13 - framecut - Frame # at which the frames for the export of LaRel and ElRel are cut, so that they all fit in the same Matrix
+14 - fps      - Frame rate
+
+
+%% 15-22: physiological parameters and measurement conditions
+
+
+15 - medium  - Medium Label (99 if not known)
+16 - passage - Passage number (0 if not known)
+
+17 - cr             - cell radius in px
+18 - cA_px          - cell area in px
+19 - cA_um          - cell area sq µm
+20 - rcb            - relative cell brightness
+21 - maxrot_stretch - maximal rotation during stretch
+22 - maxrot_relax   - maximal rotation during relaxation
+
+
+%% 23-27: fluorescence evaluation channel 1
+
+
+23 - ms_ch1      - channel 1 fluo ms value (clustering value)
+24 - mf_ch1      - channel 1 fluo mean value
+25 - mf_real_ch1 - channel 1 fluo mean value corrected for background
+26 - cvn_nn_ch1  - channel 1 fluo new clustering value - not normalized
+27 - cvn_ch1     - channel 1 fluo new clustering value
+
+
+%% 28-32: fluorescence evaluation channel 2
+
+28 - ms_ch2      - channel 2 fluo ms value (clustering value)
+29 - mf_ch2      - channel 2 fluo mean value
+30 - mf_real_ch2 - channel 2 fluo mean value corrected for background
+31 - cvn_nn_ch2  - channel 2 fluo new clustering value - not normalized
+32 - cvn_ch2     - channel 2 fluo new clustering value
+
+
+%% 33-51: LaRel parameters full
+
+
+33 - EOS_LaRel   - LaRel deformation at the end of the stretch
+34 - EOE_LaRel   - LaRel deformation at the end of the experiment (after relaxation)
+35 - Resto_LaRel - Restoration parameter LaRel
+
+36 - E_pKV_LaRel   - passive KV elasticity
+37 - eta_pKV_LaRel - passive KV vviscosity
+38 - err_pkV_LaRel - passive KV error
+
+39 - E_peKV_LaRel   - passive extended KV elasticity
+40 - E2_peKV_LaRel  - passive extended KV elasticity 2
+41 - eta_peKV_LaRel - passive extended KV viscosity
+42 - err_peKV_LaRel - active extended KV error
+
+43 - E_aKV_LaRel   - active KV elasticity
+44 - eta_aKV_LaRel - active KV viscosity
+45 - Act_aKV_LaRel - active KV activity
+46 - err_aKV_LaRel - active KV error
+
+47 - E_aeKV_LaRel   - active extended KV elasticity
+48 - E2_aeKV_LaRel  - active extended KV elasticity 2
+49 - eta_aeKV_LaRel - active extended KV viscosity
+50 - Act_aeKV_LaRel - active extended KV activity
+51 - err_aeKV_LaRel - active extended KV error
+
+
+%% 52-68: LaRel parameters 2s
+
+
+52 - EOS_LaRel_2s - LaRel after 2s
+
+53 - E_pKV_LaRel_2s   - passive KV only first 2s elasticity
+54 - eta_pKV_LaRel_2s - passive KV only first 2s viscosity
+55 - err_pKV_LaRel_2s - passive KV only first 2s error
+
+56 - E_pKV_LaRel_2s   - passive extended KV only first 2s elasticity
+57 - E2_pKV_LaRel_2s  - passive extended KV only first 2s elasticity 2
+58 - eta_pKV_LaRel_2s - passive extended KV only first 2s viscosity
+59 - err_pKV_LaRel_2s - active extended KV only first 2s error
+
+60 - E_aKV_LaRel_2s   - active KV only first 2s elasticity
+61 - eta_aKV_LaRel_2s - active KV only first 2s viscosity
+62 - Act_aKV_LaRel_2s - active KV only first 2s activity
+63 - err_aKV_LaRel_2s - active KV only first 2s error
+
+64 - E_aeKV_LaRel_2s   - active extended KV only first 2s elasticity
+65 - E2_aeKV_LaRel_2s  - active extended KV only first 2s elasticity 2
+66 - eta_aeKV_LaRel_2s - active extended KV only first 2s viscosity
+67 - Act_aeKV_LaRel_2s - active extended KV only first 2s activity
+68 - err_aeKV_LaRel_2s - active extended KV only first 2s error
+
+
+%% 69-87: ElRel parameters full
+
+
+69 - EOS_ElRel   - ElRel deformation at the end of the stretch
+70 - EOE_ElRel   - ElRel deformation at the end of the experiment (after relaxation)
+71 - Resto_ElRel - Restoration parameter ElRel
+
+72 - E_pKV_ElRel   - ElRel passive KV elasticity
+73 - eta_pKV_ElRel - ElRel passive KV viscosity
+74 - err_pKV_ElRel - ElRel passive KV error
+
+75 - E_peKV_ElRel   - ElRel passive extended KV elasticity
+76 - E2_peKV_ElRel  - ElRel passive extended KV elasticity 2
+77 - eta_peKV_ElRel - ElRel passive extended KV viscosity
+78 - err_peKV_ElRel - ElRel active extended KV error
+
+79 - E_aKV_ElRel   - ElRel active KV elasticity
+80 - eta_aKV_ElRel - ElRel active KV viscosity
+81 - Act_aKV_ElRel - ElRel active KV activity
+82 - err_aKV_ElRel - ElRel active KV error
+
+83 - E_aeKV_ElRel   - ElRel active extended KV elasticity
+84 - E2_aeKV_ElRel  - ElRel active extended KV elasticity 2
+85 - eta_aeKV_ElRel - ElRel active extended KV viscosity
+86 - Act_aeKV_ElRel - ElRel active extended KV activity
+87 - err_aeKV_ElRel - ElRel active extended KV error
+
+
+%% 88-104: ElRel parameters 2s
+
+
+88 - EOS_ElRel_2s - ElRel after 2s
+
+89 - E_pKV_ElRel_2s   - ElRel passive KV only first 2s elasticity
+90 - eta_pKV_ElRel_2s - ElRel passive KV only first 2s viscosity
+91 - err_pKV_ElRel_2s - ElRel passive KV only first 2s error
+
+92 - E_peKV_ElRel_2s   - ElRel passive extended KV only first 2s elasticity
+93 - E2_peKV_ElRel_2s  - ElRel passive extended KV only first 2s elasticity 2
+94 - eta_peKV_ElRel_2s - ElRel passive extended KV only first 2s viscosity
+95 - err_peKV_ElRel_2s - ElRel active extended KV only first 2s error
+
+96 - E_aKV_ElRel_2s   - ElRel active KV only first 2s elasticity
+97 - eta_aKV_ElRel_2s - ElRel active KV only first 2s viscosity
+98 - Act_aKV_ElRel_2s - ElRel active KV only first 2s activity
+99 - err_aKV_ElRel_2s - ElRel active KV only first 2s error
+
+100 - E_aeKV_ElRel_2s    - ElRel active extended KV only first 2s elasticity
+101 - E2_aeKV_ElRel_2s   - ElRel active extended KV only first 2s elasticity 2
+102 - eta_aeKV_ElRel_2s - ElRel active extended KV only first 2s viscosity
+103 - Act_aeKV_ElRel_2s - ElRel active extended KV only first 2s activity
+104 - err_aeKV_ElRel_2s - ElRel active extended KV only first 2s error
+
+
+%% 105-114: SpringPot full
+% SpringPot analysis should be done beforehand due to many fit options and a time consuming process
+% and be saved in the format (included in your Infos.mat file):
+% Infos_SpringPot.LaRel_full = SPF_strain_fit_from_info(...,'LaRel');
+% and/or
+% Infos_SpringPot.ElRel_full = SPF_strain_fit_from_info(...,'ElRel');
+    
+
+105 - k_SpringPot_LaRel    - LaRel springpot fit spring constant k
+106 - eta_SpringPot_LaRel  - LaRel springpot fit viscosity eta
+107 - tau_SpringPot_LaRel  - LaRel springpot fit relaxation time tau
+108 - beta_SpringPot_LaRel - LaRel springpot fit viscoelastic ratio beta
+109 - err_SpringPot_LaRel  - LaRel springpot fit error
+
+110 - k_SpringPot_ElRel    - ElRel springpot fit spring constant k
+111 - eta_SpringPot_ElRel  - ElRel springpot fit viscosity eta
+112 - tau_SpringPot_ElRel  - ElRel springpot fit relaxation time tau
+113 - beta_SpringPot_ElRel - ElRel springpot fit viscoelastic ratio beta
+114 - err_SpringPot_ElRel  - ElRel springpot fit error
+
+%% 115-124: SpringPot 2s
+% SpringPot analysis should be done beforehand due to many fit options and a time consuming process
+% and be saved in the format (included in your Infos.mat file):
+% Infos_SpringPot.LaRel_2s = SPF_strain_fit_from_info(...,'LaRel',2);
+% and/or
+% Infos_SpringPot.ElRel_2s = SPF_strain_fit_from_info(...,'ElRel',2);
+    
+
+115 - k_SpringPot_LaRel_2s    - LaRel springpot fit over the first 2s spring constant k
+116 - eta_SpringPot_LaRel_2s  - LaRel springpot fit over the first 2s viscosity eta
+117 - tau_SpringPot_LaRel_2s  - LaRel springpot fit over the first 2s relaxation time tau
+118 - beta_SpringPot_LaRel_2s - LaRel springpot fit over the first 2s viscoelastic ratio beta
+119 - err_SpringPot_LaRel_2s  - LaRel springpot fit over the first 2s error
+
+120 - k_SpringPot_ElRel_2s    - ElRel springpot fit over the first 2s spring constant k
+121 - eta_SpringPot_ElRel_2s  - ElRel springpot fit over the first 2s viscosity eta
+122 - tau_SpringPot_ElRel_2s  - ElRel springpot fit over the first 2s relaxation time tau
+123 - beta_SpringPot_ElRel_2s - ElRel springpot fit over the first 2s viscoelastic ratio beta
+124 - err_SpringPot_ElRel_2s  - ElRel springpot fit over the first 2s error
